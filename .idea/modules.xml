@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FM.iml" filepath="$PROJECT_DIR$/FM.iml" />
       <module fileurl="file://$PROJECT_DIR$/FreeMusic.iml" filepath="$PROJECT_DIR$/FreeMusic.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/NetModel/NetModel.iml" filepath="$PROJECT_DIR$/NetModel/NetModel.iml" />
