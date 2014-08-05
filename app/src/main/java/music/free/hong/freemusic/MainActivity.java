@@ -15,7 +15,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        netUiPresent = new NetUiPresent();
+        netUiPresent = new NetUiPresent(this);
+        netUiPresent.getHtmlSource("");
         //test
     }
 

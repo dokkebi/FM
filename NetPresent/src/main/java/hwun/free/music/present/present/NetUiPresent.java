@@ -1,5 +1,7 @@
 package hwun.free.music.present.present;
 
+import android.content.Context;
+
 import hwun.free.music.model.HttpUtil;
 import hwun.free.music.present.ifs.INetUi;
 
@@ -8,10 +10,15 @@ import hwun.free.music.present.ifs.INetUi;
  */
 public class NetUiPresent implements INetUi {
     private HttpUtil httpUtil;
+    private Context context;
+
+    public NetUiPresent(Context context) {
+        this.context = context;
+    }
 
     @Override
     public void getHtmlSource(String targetUrl) {
-        httpUtil = new HttpUtil();
+        httpUtil = new HttpUtil(context);
         httpUtil.getHtmlSource("");
     }
 
