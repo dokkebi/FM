@@ -5,7 +5,7 @@ package hwun.free.music.present.ifs;
  */
 public interface INetUi {
     /**웹 페이지 소스를 구합니다.
-     * @param targetUrl 소스를 구하려는 페이지 주소
+     * @param targetUrl 소스를 구하려는 페이지 주소.
      */ 
     void getHtmlSource(String targetUrl);
 }
