@@ -19,7 +19,7 @@ public class NetUiPresent implements INetUi {
     @Override
     public void getHtmlSource(String targetUrl) {
         httpUtil = new HttpUtil(context);
-        httpUtil.getHtmlSource("");
+        // httpUtil.getHtmlSource("");
     }
 
 }
