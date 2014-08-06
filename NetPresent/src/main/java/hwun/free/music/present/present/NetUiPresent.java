@@ -2,6 +2,10 @@ package hwun.free.music.present.present;
 
 import android.content.Context;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+
 import hwun.free.music.model.HttpUtil;
 import hwun.free.music.present.ifs.INetUi;
 
@@ -19,7 +23,17 @@ public class NetUiPresent implements INetUi {
     @Override
     public void getHtmlSource(String targetUrl) {
         httpUtil = new HttpUtil(context);
-        // httpUtil.getHtmlSource("");
+        httpUtil.getHtmlSourceAtMethod(Request.Method.POST, targetUrl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                System.out.print("response : " + response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.print("error : " + error);
+            }
+        });
     }
 
 }
