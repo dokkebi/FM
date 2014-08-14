@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/LogModule" />
             <option value="$PROJECT_DIR$/NetModel" />
             <option value="$PROJECT_DIR$/NetPresent" />
             <option value="$PROJECT_DIR$/app" />

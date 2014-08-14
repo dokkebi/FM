@@ -17,6 +17,6 @@ public class HelloTest extends ActivityInstrumentationTestCase2<MainActivity> {
     public void testgg() {
         Activity ac = getActivity();
         NetUiPresent p = new NetUiPresent(ac.getBaseContext());
-        p.getHtmlSource("");
+        p.getHtmlSource("http://search.4shared.com/q/CCQD/1/music/Touch+my");
     }
 }

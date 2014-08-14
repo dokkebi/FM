@@ -1,1 +1,1 @@
-include ':app', ':NetPresent', ':NetModel'
+include ':app', ':NetPresent', ':NetModel', ':LogModule'

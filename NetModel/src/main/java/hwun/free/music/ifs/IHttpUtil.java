@@ -1,5 +1,7 @@
 package hwun.free.music.ifs;
 
+import java.util.ArrayList;
+
 /**
  * Created by HWUN on 2014-08-04.
  */
@@ -12,5 +14,9 @@ public interface IHttpUtil {
      * @param response  Html Source
      * @param error     Error
      */
-    void getHtmlSourceAtMethod(int method, String targetUrl);
+    void getHtmlSourceAtMethod(int method, String targetUrl, IResponse resp);
+
+    ArrayList<String> getAHrefValue(String htmlSource, String findTag);
+
+    String getDownloadUrlFromSource(String sourceHtml);
 }

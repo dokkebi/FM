@@ -16,7 +16,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         netUiPresent = new NetUiPresent(this);
-        netUiPresent.getHtmlSource("");
+        netUiPresent.getHtmlSource("http://search.4shared.com/q/CCQD/1/music/Touch+my");
         //test
     }
 
