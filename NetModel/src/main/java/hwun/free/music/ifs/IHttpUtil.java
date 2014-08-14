@@ -1,7 +1,5 @@
 package hwun.free.music.ifs;
 
-import com.android.volley.Response;
-
 /**
  * Created by HWUN on 2014-08-04.
  */
@@ -14,5 +12,5 @@ public interface IHttpUtil {
      * @param response  Html Source
      * @param error     Error
      */
-    void getHtmlSourceAtMethod(int method, String targetUrl, Response.Listener<String> response, Response.ErrorListener error);
+    void getHtmlSourceAtMethod(int method, String targetUrl);
 }

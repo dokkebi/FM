@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -20,8 +21,18 @@ public class HttpUtil implements IHttpUtil {
     }
 
     @Override
-    public void getHtmlSourceAtMethod(int method, String targetUrl, Response.Listener<String> response, Response.ErrorListener error) {
-        StringRequest sr = new StringRequest(method, targetUrl, response, error);
+    public void getHtmlSourceAtMethod(int method, String targetUrl) {
+        StringRequest sr = new StringRequest(method, targetUrl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
         queue.add(sr);
     }
 }
