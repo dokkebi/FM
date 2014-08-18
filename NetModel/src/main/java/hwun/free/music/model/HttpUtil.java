@@ -14,9 +14,11 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import hwun.free.music.ifs.IHttpUtil;
 import hwun.free.music.ifs.IResponse;
+import hwun.log.HLog;
 
 /**
  * Created by HWUN on 2014-08-04.
@@ -42,6 +44,13 @@ public class HttpUtil implements IHttpUtil {
 
             }
         });
+        try {
+            Map<String, String> dd = (Map<String, String>) sr.getHeaders();
+            dd.put("User-Agent", "Mozilla/5.0");
+            HLog.info("test");
+        } catch (Exception e) {
+
+        }
         queue.add(sr);
     }
 

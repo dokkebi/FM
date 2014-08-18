@@ -20,13 +20,15 @@ import hwun.log.HLog;
 public class NetUiPresent implements INetUi {
     private HttpUtil httpUtil;
     private Context context;
+    private boolean isDownloaded = false;
     private IResponse downloadHtmlSourceResponse = new IResponse() {
         @Override
         public void onResponse(String html) {
+            if (isDownloaded) return;
             String downloadUrl = httpUtil.getDownloadUrlFromSource(html);
             HLog.info("Download url >> " + downloadUrl);
 
-            DownloadManager.Request req = new DownloadManager.Request(Uri.parse("http://dc648.4shared.com/img/4955667830/b7d83178/dlink__2Fdownload_2FU7A2yHxmba_3Ftsid_3D20140814-092347-a32ecdf8_26lgfp_3D1000_26sbsr_3D265b3aa717c08eb1170be3933d49c08b4ea277c7af64573c/preview.mp3"));
+            DownloadManager.Request req = new DownloadManager.Request(Uri.parse(downloadUrl));
             req.setTitle("test");
             req.setDescription("download");
             req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, Environment.getExternalStorageDirectory().getAbsolutePath());
@@ -34,6 +36,7 @@ public class NetUiPresent implements INetUi {
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).mkdirs();
             DownloadManager downMgr = (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
             downMgr.enqueue(req);
+            isDownloaded = true;
             /*ArrayList<String> hrefValueList = httpUtil.getAHrefValue(html, "a.mobFileName");
             if(hrefValueList != null){
                 for(String v : hrefValueList){
